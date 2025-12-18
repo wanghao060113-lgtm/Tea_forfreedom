@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="印象桐城：千年文都的山水与文脉。探索桐城派历史、六尺巷故事、龙眠山风光，了解桐城小花茶的文化底蕴。">
+    <title>印象桐城：千年文都的山水与文脉 - 茶叙入海</title>
+    <!-- 中文字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #2E7D32; /* 竹青色 */
+            --secondary: #F8F5F0; /* 宣纸白 */
+            --earth: #A0522D; /* 赭石色 */
+            --ink: #003A6B; /* 黛蓝色 */
+            --accent: #D4AF37; /* 暖金色 */
+            --foreground: #333333;
+            --muted: #F9F9F9;
+            --border: #E5E5E5;
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', 'Source Han Sans SC', 'Alibaba PuHuiTi', system-ui, sans-serif;
+            color: var(--foreground);
+            background: var(--secondary);
+            line-height: 1.8;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .font-display {
+            font-family: 'LXGW WenKai', 'Source Han Serif SC', 'Noto Serif SC', serif;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(248, 245, 240, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 58, 107, 0.1);
+            z-index: 50;
+            padding: 1rem 0;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .logo {
+            font-family: 'LXGW WenKai', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--ink);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--ink);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--primary);
+        }
+        
+        /* 卷轴开篇 - Hero Section */
+        .hero-section {
+            position: relative;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.1), rgba(248, 245, 240, 1));
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><text x="100" y="100" font-size="150" fill="rgba(0,58,107,0.05)" text-anchor="middle" dominant-baseline="middle" font-family="serif">桐</text></svg>') center/cover no-repeat;
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+        
+        .hero-title {
+            font-family: 'LXGW WenKai', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: rgba(0, 58, 107, 0.8);
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        .hero-quote {
+            font-family: 'LXGW WenKai', serif;
+            font-size: 1.2rem;
+            color: var(--earth);
+            font-style: italic;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            border-left: 3px solid var(--accent);
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 0.5rem;
+        }
+        
+        /* 板块通用样式 */
+        .section {
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .section-title {
+            font-family: 'LXGW WenKai', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 1rem;
+            text-align: center;
+            letter-spacing: 0.02em;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: rgba(0, 58, 107, 0.7);
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .content-block {
+            background: white;
+            padding: 3rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            margin-bottom: 2rem;
+        }
+        
+        .content-block h3 {
+            font-family: 'LXGW WenKai', serif;
+            font-size: 2rem;
+            color: var(--ink);
+            margin-bottom: 1.5rem;
+        }
+        
+        .content-block p {
+            font-size: 1.05rem;
+            line-height: 2;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+        
+        .content-block .highlight {
+            color: var(--earth);
+            font-weight: 600;
+        }
+        
+        /* 数字文化墙 */
+        .culture-wall {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .culture-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .culture-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 24px rgba(46, 125, 50, 0.15);
+            transform: translateY(-4px);
+        }
+        
+        .culture-card .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: var(--muted);
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: var(--ink);
+            border: 3px solid var(--accent);
+        }
+        
+        .culture-card h4 {
+            font-family: 'LXGW WenKai', serif;
+            font-size: 1.5rem;
+            color: var(--ink);
+            margin-bottom: 0.5rem;
+        }
+        
+        .culture-card .period {
+            font-size: 0.9rem;
+            color: #999;
+            margin-bottom: 1rem;
+        }
+        
+        .culture-card .description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.6;
+            display: none;
+        }
+        
+        .culture-card.active .description {
+            display: block;
+        }
+        
+        /* 时间轴 */
+        .timeline {
+            position: relative;
+            padding: 3rem 0;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent);
+            transform: translateX(-50%);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 4rem;
+            width: 45%;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+            padding-right: 3rem;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 55%;
+            text-align: left;
+            padding-left: 3rem;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: var(--earth);
+            border: 4px solid white;
+            border-radius: 50%;
+            top: 0.5rem;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -1.5rem;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -1.5rem;
+        }
+        
+        .timeline-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-year {
+            font-family: 'LXGW WenKai', serif;
+            font-size: 1.5rem;
+            color: var(--earth);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-text {
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        /* 地图区域 */
+        .map-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 0.75rem;
+            margin-top: 3rem;
+        }
+        
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            background: var(--muted);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        
+        .map-marker {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            border-radius: 50%;
+            border: 3px solid white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        
+        .map-marker:hover {
+            transform: scale(1.2);
+            background: var(--earth);
+        }
+        
+        .map-marker[data-marker="longmian"] {
+            top: 30%;
+            left: 40%;
+        }
+        
+        .map-marker[data-marker="xizi"] {
+            top: 60%;
+            left: 50%;
+        }
+        
+        .map-marker[data-marker="wenmiao"] {
+            top: 45%;
+            left: 45%;
+        }
+        
+        .map-marker[data-marker="liuchi"] {
+            top: 50%;
+            left: 48%;
+        }
+        
+        .marker-tooltip {
+            position: absolute;
+            background: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: none;
+            min-width: 200px;
+            z-index: 100;
+        }
+        
+        .map-marker:hover .marker-tooltip {
+            display: block;
+        }
+        
+        /* 产品关联卡片 */
+        .product-link-card {
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.05), rgba(212, 175, 55, 0.05));
+            border: 2px solid var(--primary);
+            border-radius: 0.75rem;
+            padding: 2.5rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        .product-link-card h3 {
+            font-family: 'LXGW WenKai', serif;
+            font-size: 2rem;
+            color: var(--ink);
+            margin-bottom: 1rem;
+        }
+        
+        .product-link-card p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 0.375rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: inherit;
+        }
+        
+        .btn-primary {
+            background: var(--earth);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #8B4513;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(160, 82, 45, 0.3);
+        }
+        
+        /* 交错式卡片 */
+        .stagger-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stagger-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+        
+        .stagger-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        
+        .stagger-card h4 {
+            font-family: 'LXGW WenKai', serif;
+            font-size: 1.5rem;
+            color: var(--ink);
+            margin-bottom: 1rem;
+        }
+        
+        .stagger-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .timeline::before {
+                left: 2rem;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                text-align: left !important;
+                padding-left: 4rem !important;
+                padding-right: 0 !important;
+            }
+            
+            .timeline-item .timeline-dot {
+                left: 1.5rem !important;
+            }
+            
+            .culture-wall {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="preview.html" class="logo">茶叙入海</a>
+            <a href="preview.html" class="back-link">← 返回首页</a>
+        </div>
+    </header>
+
+    <!-- 卷轴开篇 -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title font-display">印象桐城</h1>
+            <p class="hero-subtitle">千年文都的山水与文脉</p>
+            <div class="hero-quote">
+                "抵天柱而枕龙眠，牵大江而引枞川"
+            </div>
+        </div>
+    </section>
+
+    <!-- 板块一：印象·文都桐城 -->
+    <section class="section" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">印象·文都桐城</h2>
+            <p class="section-subtitle">一座因油桐得名的千年古城，地处大别山东麓、长江北岸，文里文气、和气与烟火气交融</p>
+            
+            <div class="content-block">
+                <h3>地理诗篇</h3>
+                <p>
+                    桐城，位于安徽省中部偏南，<span class="highlight">"抵天柱而枕龙眠，牵大江而引枞川"</span>，生动描绘了这座城市的地理格局。地处大别山东麓、长江北岸，因境内多油桐而得名，有着千年的历史积淀。
+                </p>
+                <p>
+                    这里山水相依，既有大别山的雄浑，又有长江的灵动，独特的地理环境孕育了桐城独特的文化气质。
+                </p>
+            </div>
+            
+            <div class="content-block">
+                <h3>城市气质</h3>
+                <p>
+                    桐城有着<span class="highlight">"文里文气"</span>的独特气质，这种气质既体现在深厚的文化底蕴上，也体现在日常生活的细节中。同时，桐城人<span class="highlight">"和气"</span>的处世哲学与<span class="highlight">"烟火气"</span>的生活气息完美交融，形成了这座城市独特的文化魅力。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 板块二：文脉·桐城与桐城派 -->
+    <section class="section" style="background: var(--secondary);">
+        <div class="container">
+            <h2 class="section-title">文脉·桐城与桐城派</h2>
+            <p class="section-subtitle">清代最大散文流派，主盟文坛200余年，因"天下文章，其出于桐城乎！"而获"文都"美誉</p>
+            
+            <div class="content-block">
+                <h3>何谓桐城派</h3>
+                <p>
+                    <span class="highlight">桐城派</span>是清代最大的散文流派，因戴名世、方苞、刘大櫆、姚鼐等代表人物均为桐城人而得名。这一流派主盟清代文坛200余年，归聚作家超过千人，影响深远。
+                </p>
+                <p>
+                    桐城派的核心主张是<span class="highlight">"义理、考据、辞章"</span>三者兼备，文风追求<span class="highlight">"清真雅正"</span>，强调文章要有思想深度、考证严谨、文辞优美。
+                </p>
+            </div>
+            
+            <div class="content-block">
+                <h3>历史地位</h3>
+                <p>
+                    <span class="highlight">"天下文章，其出于桐城乎！"</span>这是清代对桐城派的赞誉，桐城因此获得了<span class="highlight">"文都"</span>的美誉。桐城派不仅影响了清代文坛，其文学理念和创作方法至今仍有重要影响。
+                </p>
+            </div>
+            
+            <!-- 数字文化墙 -->
+            <div class="culture-wall">
+                <div class="culture-card" onclick="toggleCard(this)">
+                    <div class="avatar">方</div>
+                    <h4>方苞</h4>
+                    <div class="period">1668-1749</div>
+                    <div class="description">
+                        桐城派创始人之一，提出"义法"说，强调文章要有思想内容和形式规范。
+                    </div>
+                </div>
+                <div class="culture-card" onclick="toggleCard(this)">
+                    <div class="avatar">姚</div>
+                    <h4>姚鼐</h4>
+                    <div class="period">1732-1815</div>
+                    <div class="description">
+                        桐城派集大成者，提出"义理、考据、辞章"三者统一，影响深远。
+                    </div>
+                </div>
+                <div class="culture-card" onclick="toggleCard(this)">
+                    <div class="avatar">刘</div>
+                    <h4>刘大櫆</h4>
+                    <div class="period">1698-1780</div>
+                    <div class="description">
+                        桐城派重要代表，承上启下，发展了方苞的文学理论。
+                    </div>
+                </div>
+                <div class="culture-card" onclick="toggleCard(this)">
+                    <div class="avatar">戴</div>
+                    <h4>戴名世</h4>
+                    <div class="period">1653-1713</div>
+                    <div class="description">
+                        桐城派先驱，其文学实践为桐城派的形成奠定了基础。
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 时间轴 -->
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">17-18世纪</div>
+                        <div class="timeline-text">桐城派形成期，方苞、刘大櫆等奠定理论基础</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">18-19世纪</div>
+                        <div class="timeline-text">姚鼐集大成，桐城派达到鼎盛，主盟文坛</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">19-20世纪</div>
+                        <div class="timeline-text">桐城派影响延续，归聚作家超千人</div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">现代</div>
+                        <div class="timeline-text">桐城派文学理念传承至今，影响深远</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 板块三：故事·让与和的智慧 -->
+    <section class="section" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">故事·让与和的智慧</h2>
+            <p class="section-subtitle">六尺巷的故事，是"亲仁善邻"中华"和"文化的生动体现</p>
+            
+            <div class="content-block">
+                <h3>六尺巷的故事</h3>
+                <p>
+                    清康熙年间，大学士张英的家人与邻居因宅基地发生争执。家人写信向张英求助，希望他利用职权解决争端。
+                </p>
+                <p>
+                    张英回诗一首：<span class="highlight">"一纸书来只为墙，让他三尺又何妨。长城万里今犹在，不见当年秦始皇。"</span>
+                </p>
+                <p>
+                    家人见诗后，主动让出三尺。邻居深受感动，也主动让出三尺。于是，两家之间形成了一条六尺宽的巷子，这就是<span class="highlight">"六尺巷"</span>的由来。
+                </p>
+            </div>
+            
+            <div class="content-block">
+                <h3>文化内涵</h3>
+                <p>
+                    <span class="highlight">"窄巷宽心"</span>，六尺巷的故事是"亲仁善邻"中华"和"文化的生动体现。这一佳话已从历史故事演化为当地的调解方法和工作理念，成为桐城"和气"文化的重要象征。
+                </p>
+                <p>
+                    六尺巷不仅是一条巷子，更是一种精神，一种"让"的智慧，一种"和"的境界。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 板块四：风物·山水间的馈赠 -->
+    <section class="section" style="background: var(--secondary);">
+        <div class="container">
+            <h2 class="section-title">风物·山水间的馈赠</h2>
+            <p class="section-subtitle">龙眠毓秀，嬉湖风光，物产丰饶，为桐城小花茶提供了得天独厚的生长环境</p>
+            
+            <div class="content-block">
+                <h3>龙眠毓秀</h3>
+                <p>
+                    <span class="highlight">龙眠山</span>，因山势"宛若龙眠"而得名，是宋代著名画家李公麟的归隐地，也是<span class="highlight">"桐城小花"茶的核心产区</span>。
+                </p>
+                <p>
+                    龙眠山海拔700米以上，气候温和，雨量充沛，土壤肥沃，为茶叶生长提供了得天独厚的自然条件。这里出产的桐城小花茶，香气清雅，滋味鲜爽，是茶中珍品。
+                </p>
+            </div>
+            
+            <div class="content-block">
+                <h3>嬉湖风光</h3>
+                <p>
+                    <span class="highlight">嬉子湖国家湿地公园</span>，是桐城重要的生态名片。这里湖光山色，生态优美，不仅有丰富的生物多样性，还承载着"裁襟励子"等非物质文化遗产。
+                </p>
+            </div>
+            
+            <div class="content-block">
+                <h3>物产集锦</h3>
+                <p>
+                    桐城物产丰饶，除了著名的<span class="highlight">桐城小花茶</span>，还有桐城水芹、丰糕、大关水碗等特色美食，以及玉雕、掐丝珐琅等传统工艺，展现了桐城深厚的文化底蕴和丰富的生活智慧。
+                </p>
+            </div>
+            
+            <!-- 诗意地图 -->
+            <div class="map-section">
+                <h3 style="text-align: center; font-family: 'LXGW WenKai', serif; font-size: 2rem; color: var(--ink); margin-bottom: 1rem;">桐城诗意地图</h3>
+                <p style="text-align: center; color: #666; margin-bottom: 2rem;">点击标记，探索桐城文化地标</p>
+                <div class="map-container">
+                    <div class="map-marker" data-marker="longmian" title="龙眠山">
+                        ⛰️
+                        <div class="marker-tooltip">
+                            <strong>龙眠山</strong><br>
+                            桐城小花茶核心产区<br>
+                            宋代画家李公麟归隐地
+                        </div>
+                    </div>
+                    <div class="map-marker" data-marker="xizi" title="嬉子湖">
+                        🏞️
+                        <div class="marker-tooltip">
+                            <strong>嬉子湖</strong><br>
+                            国家湿地公园<br>
+                            "裁襟励子"非遗文化
+                        </div>
+                    </div>
+                    <div class="map-marker" data-marker="wenmiao" title="文庙">
+                        🏛️
+                        <div class="marker-tooltip">
+                            <strong>桐城文庙</strong><br>
+                            文都文化象征<br>
+                            崇文重教的历史见证
+                        </div>
+                    </div>
+                    <div class="map-marker" data-marker="liuchi" title="六尺巷">
+                        🏮
+                        <div class="marker-tooltip">
+                            <strong>六尺巷</strong><br>
+                            "让"的智慧<br>
+                            "和"文化的生动体现
+                        </div>
+                    </div>
+                    <div style="color: #999; font-size: 0.9rem;">地图占位符 - 可替换为手绘风格地图</div>
+                </div>
+            </div>
+            
+            <!-- 产品关联 -->
+            <div class="product-link-card">
+                <h3>品味桐城小花</h3>
+                <p>来自龙眠山核心产区的正宗桐城小花茶，传承千年文脉，品味山水馈赠</p>
+                <a href="preview.html#products" class="btn btn-primary">立即选购桐城小花茶</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 板块五：文都新语·传统的延续 -->
+    <section class="section" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">文都新语·传统的延续</h2>
+            <p class="section-subtitle">从"穷不丢书，富不丢猪"到"勉成国器"，从传统文脉到现代产业</p>
+            
+            <div class="content-block">
+                <h3>崇文重教</h3>
+                <p>
+                    <span class="highlight">"穷不丢书，富不丢猪"</span>，这句民谚在桐城深入人心，体现了桐城人对教育的重视。近现代以来，桐城培养出近5000名博士、近20名两院院士，展现了文都深厚的教育传统。
+                </p>
+            </div>
+            
+            <div class="content-block">
+                <h3>勉成国器</h3>
+                <p>
+                    桐城中学的校训<span class="highlight">"勉成国器"</span>，激励着一代代学子将个人奋斗融入家国情怀。这一理念不仅体现在教育上，也体现在桐城人的精神追求中。
+                </p>
+            </div>
+            
+            <div class="content-block">
+                <h3>产业新篇</h3>
+                <p>
+                    从传统的<span class="highlight">"小袋子、小刷子"</span>，到如今聚焦<span class="highlight">新能源汽车零部件、光伏新材料等"两新一医"产业</span>，桐城在传承文脉的同时，展现出强大的创新活力，实现了传统与现代的完美融合。
+                </p>
+            </div>
+            
+            <!-- 交错式卡片 -->
+            <div class="stagger-grid">
+                <div class="stagger-card">
+                    <h4>教育传承</h4>
+                    <p>近5000名博士、近20名两院院士，文都教育传统薪火相传</p>
+                </div>
+                <div class="stagger-card">
+                    <h4>文化创新</h4>
+                    <p>从桐城派到现代文化产业，文化传承与创新并重</p>
+                </div>
+                <div class="stagger-card">
+                    <h4>产业升级</h4>
+                    <p>"两新一医"产业布局，展现文都现代活力</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--secondary); padding: 3rem 0; border-top: 1px solid var(--border);">
+        <div class="container" style="text-align: center;">
+            <p style="color: #666; margin-bottom: 1rem;">© 2024 茶叙入海. 保留所有权利.</p>
+            <a href="preview.html" style="color: var(--primary); text-decoration: none;">返回首页</a>
+        </div>
+    </footer>
+
+    <script>
+        // 文化卡片交互
+        function toggleCard(card) {
+            // 关闭其他卡片
+            document.querySelectorAll('.culture-card').forEach(c => {
+                if (c !== card) {
+                    c.classList.remove('active');
+                }
+            });
+            // 切换当前卡片
+            card.classList.toggle('active');
+        }
+        
+        // 地图标记交互（简单实现）
+        document.querySelectorAll('.map-marker').forEach(marker => {
+            marker.addEventListener('mouseenter', function() {
+                this.style.zIndex = '101';
+            });
+            marker.addEventListener('mouseleave', function() {
+                this.style.zIndex = '1';
+            });
+        });
+    </script>
+</body>
+</html>
+

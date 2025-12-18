@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "home": "首页",
+    "products": "产品",
+    "culture": "文都桐城",
+    "about": "关于我们",
+    "blog": "茶事风物",
+    "contact": "联系我们",
+    "account": "账户",
+    "cart": "购物车"
+  },
+  "home": {
+    "hero": {
+      "title": "桐城文脉，入海一盏",
+      "subtitle": "从安徽桐城，直达您的茶杯",
+      "shopNow": "立即选茶",
+      "learnMore": "了解桐城"
+    },
+    "value": {
+      "direct": {
+        "title": "产地直采",
+        "description": "直接从安徽省桐城市原产地采购"
+      },
+      "ai": {
+        "title": "AI文化体验",
+        "description": "互动式茶文化指导"
+      },
+      "trust": {
+        "title": "可信渠道",
+        "description": "正宗产品，全程可追溯"
+      }
+    },
+    "featured": {
+      "title": "精选产品",
+      "viewAll": "查看全部产品"
+    },
+    "culture": {
+      "title": "茶文化传承",
+      "description": "发现桐城小花茶的丰富历史"
+    },
+    "testimonials": {
+      "title": "客户评价"
+    },
+    "cta": {
+      "title": "准备好体验正宗的中国茶了吗？",
+      "button": "立即购买"
+    }
+  },
+  "footer": {
+    "quickLinks": "快速链接",
+    "contact": "联系方式",
+    "newsletter": "订阅邮件",
+    "subscribe": "订阅",
+    "emailPlaceholder": "输入您的邮箱",
+    "copyright": "© 2024 茶叙入海. 保留所有权利.",
+    "paymentMethods": "支付方式"
+  },
+  "products": {
+    "title": "我们的茶叶系列",
+    "subtitle": "发现来自安徽桐城的正宗桐城小花茶",
+    "filters": "筛选",
+    "productsFound": "个产品",
+    "noProducts": "未找到产品"
+  },
+  "productDetail": {
+    "breadcrumb": {
+      "products": "产品"
+    },
+    "reviews": "条评价",
+    "addToCart": "加入购物车",
+    "buyNow": "立即购买",
+    "stockStatus": "库存状态",
+    "inStock": "有货",
+    "outOfStock": "缺货",
+    "tabs": {
+      "description": "产品详情",
+      "brewing": "冲泡指南",
+      "origin": "风物故事",
+      "reviews": "用户品鉴"
+    },
+    "brewingGuide": "冲泡桐城小花茶的完美方法：每200ml水使用2-3克茶叶，水温80-85°C（176-185°F）。第一次冲泡2-3分钟。此茶可多次冲泡，每次冲泡都会展现不同的风味层次。",
+    "originStory": "桐城小花茶起源于中国安徽省桐城市。这款茶有着1000多年的历史，以其细腻的花香和清爽的口感而闻名。茶叶生长在高海拔的山区，那里的气候和土壤条件为生产这种优质茶叶创造了完美的环境。",
+    "reviewsPlaceholder": "客户评价将在此显示。",
+    "relatedProducts": "相关产品"
+  }
+}
+
