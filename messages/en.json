@@ -1,0 +1,86 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "about": "About",
+    "blog": "Blog",
+    "contact": "Contact",
+    "account": "Account",
+    "cart": "Cart"
+  },
+  "home": {
+    "hero": {
+      "title": "Authentic Tongcheng Xiaohua Tea",
+      "subtitle": "Direct from Anhui, China to Your Cup",
+      "shopNow": "Shop Now",
+      "learnMore": "Learn More"
+    },
+    "value": {
+      "direct": {
+        "title": "Direct from Origin",
+        "description": "Sourced directly from Tongcheng, Anhui Province"
+      },
+      "ai": {
+        "title": "AI Cultural Experience",
+        "description": "Interactive tea culture guidance"
+      },
+      "trust": {
+        "title": "Trusted Channel",
+        "description": "Authentic products with traceability"
+      }
+    },
+    "featured": {
+      "title": "Featured Products",
+      "viewAll": "View All Products"
+    },
+    "culture": {
+      "title": "Tea Culture Heritage",
+      "description": "Discover the rich history of Tongcheng Xiaohua tea"
+    },
+    "testimonials": {
+      "title": "What Our Customers Say"
+    },
+    "cta": {
+      "title": "Ready to Experience Authentic Chinese Tea?",
+      "button": "Shop Now"
+    }
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "newsletter": "Newsletter",
+    "subscribe": "Subscribe",
+    "emailPlaceholder": "Enter your email",
+    "copyright": "© 2024 Tongcheng Tea. All rights reserved.",
+    "paymentMethods": "Payment Methods"
+  },
+  "products": {
+    "title": "Our Tea Collection",
+    "subtitle": "Discover authentic Tongcheng Xiaohua tea from Anhui, China",
+    "filters": "Filters",
+    "productsFound": "products found",
+    "noProducts": "No products found"
+  },
+  "productDetail": {
+    "breadcrumb": {
+      "products": "Products"
+    },
+    "reviews": "reviews",
+    "addToCart": "Add to Cart",
+    "buyNow": "Buy Now",
+    "stockStatus": "Stock Status",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "tabs": {
+      "description": "Description",
+      "brewing": "Brewing Guide",
+      "origin": "Origin Story",
+      "reviews": "Reviews"
+    },
+    "brewingGuide": "To brew the perfect cup of Tongcheng Xiaohua tea, use 2-3 grams of tea leaves per 200ml of water at 80-85°C (176-185°F). Steep for 2-3 minutes for the first infusion. This tea can be steeped multiple times, with each infusion revealing different layers of flavor.",
+    "originStory": "Tongcheng Xiaohua tea originates from Tongcheng County in Anhui Province, China. This tea has a history of over 1,000 years and is known for its delicate floral aroma and refreshing taste. The tea is grown in the mountainous regions at high altitude, where the climate and soil conditions create the perfect environment for producing this exceptional tea.",
+    "reviewsPlaceholder": "Customer reviews will be displayed here.",
+    "relatedProducts": "Related Products"
+  }
+}
+

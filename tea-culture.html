@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="茶事风物：桐城小花的四季风味与冲泡指南。探索明前、雨前、谷雨茶的独特魅力，学习如何泡好一杯桐城小花。">
+    <title>茶事风物：桐城小花的四季之味 - 茶叙入海</title>
+    <!-- 中文字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary: #2E7D32; /* 竹青色 */
+            --secondary: #F8F5F0; /* 宣纸白 */
+            --earth: #A0522D; /* 赭石色 */
+            --ink: #003A6B; /* 黛蓝色 */
+            --accent: #D4AF37; /* 暖金色 */
+            --foreground: #333333;
+            --muted: #F9F9F9;
+            --border: #E5E5E5;
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', 'Source Han Sans SC', 'Alibaba PuHuiTi', system-ui, sans-serif;
+            color: var(--foreground);
+            background: var(--secondary);
+            line-height: 1.8;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .font-display {
+            font-family: 'LXGW WenKai', 'Source Han Serif SC', 'Noto Serif SC', serif;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(248, 245, 240, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 58, 107, 0.1);
+            z-index: 50;
+            padding: 1rem 0;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .logo {
+            font-family: 'LXGW WenKai', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--ink);
+            text-decoration: none;
+        }
+        
+        .back-link {
+            color: var(--ink);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: var(--primary);
+        }
+        
+        /* 沉浸式引语区 */
+        .hero-section {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.1), rgba(248, 245, 240, 1));
+            overflow: hidden;
+            padding: 4rem 1rem;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><text x="100" y="100" font-size="120" fill="rgba(0,58,107,0.03)" text-anchor="middle" dominant-baseline="middle" font-family="serif">茶</text></svg>') center/cover no-repeat;
+            opacity: 0.4;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 800px;
+        }
+        
+        .hero-title {
+            font-family: 'LXGW WenKai', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+            line-height: 1.2;
+        }
+        
+        .hero-quote {
+            font-family: 'LXGW WenKai', serif;
+            font-size: 1.8rem;
+            color: var(--earth);
+            font-style: italic;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            color: rgba(0, 58, 107, 0.8);
+            line-height: 2;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* 板块通用样式 */
+        .section {
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .section-title {
+            font-family: 'LXGW WenKai', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 1rem;
+            text-align: center;
+            letter-spacing: 0.02em;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: rgba(0, 58, 107, 0.7);
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* 四季风味卡片组 */
+        .season-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .season-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 2.5rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .season-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        
+        .season-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 8px 24px rgba(46, 125, 50, 0.15);
+            transform: translateY(-4px);
+        }
+        
+        .season-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .season-badge {
+            display: inline-block;
+            background: var(--earth);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .season-card h3 {
+            font-family: 'LXGW WenKai', serif;
+            font-size: 1.75rem;
+            color: var(--ink);
+            margin-bottom: 1rem;
+        }
+        
+        .season-time {
+            color: var(--earth);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .season-description {
+            color: #555;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+        
+        .season-people {
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .season-people strong {
+            color: var(--ink);
+        }
+        
+        /* 冲泡指南 */
+        .brewing-steps {
+            max-width: 900px;
+            margin: 3rem auto 0;
+        }
+        
+        .step-card {
+            background: white;
+            border-left: 4px solid var(--accent);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .step-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            transform: translateX(8px);
+        }
+        
+        .step-number {
+            position: absolute;
+            left: -2rem;
+            top: 2rem;
+            width: 3rem;
+            height: 3rem;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: 'LXGW WenKai', serif;
+        }
+        
+        .step-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .step-icon {
+            font-size: 2rem;
+        }
+        
+        .step-title {
+            font-family: 'LXGW WenKai', serif;
+            font-size: 1.5rem;
+            color: var(--ink);
+        }
+        
+        .step-content {
+            color: #555;
+            line-height: 2;
+            font-size: 1.05rem;
+        }
+        
+        /* 品茶艺术 */
+        .art-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .art-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 0.75rem;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+        
+        .art-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+        
+        .art-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .art-card h4 {
+            font-family: 'LXGW WenKai', serif;
+            font-size: 1.75rem;
+            color: var(--ink);
+            margin-bottom: 1rem;
+        }
+        
+        .art-description {
+            color: #666;
+            line-height: 1.9;
+            font-size: 1rem;
+        }
+        
+        .art-card.special {
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.05), rgba(212, 175, 55, 0.05));
+            border: 2px solid var(--primary);
+        }
+        
+        .art-card.special .art-description {
+            margin-bottom: 1.5rem;
+        }
+        
+        .art-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.2s;
+        }
+        
+        .art-link:hover {
+            color: var(--earth);
+            gap: 0.75rem;
+        }
+        
+        /* 科学特质 */
+        .science-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .science-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary);
+        }
+        
+        .science-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .science-card h4 {
+            font-family: 'LXGW WenKai', serif;
+            font-size: 1.75rem;
+            color: var(--ink);
+            margin-bottom: 1rem;
+        }
+        
+        .science-description {
+            color: #555;
+            line-height: 1.9;
+            font-size: 1.05rem;
+        }
+        
+        .science-highlight {
+            background: rgba(46, 125, 50, 0.1);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            border-left: 3px solid var(--primary);
+        }
+        
+        .science-highlight strong {
+            color: var(--primary);
+        }
+        
+        /* 文化关联卡片 */
+        .culture-link-card {
+            background: linear-gradient(135deg, rgba(0, 58, 107, 0.05), rgba(46, 125, 50, 0.05));
+            border: 2px solid var(--ink);
+            border-radius: 0.75rem;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        .culture-link-card h3 {
+            font-family: 'LXGW WenKai', serif;
+            font-size: 2rem;
+            color: var(--ink);
+            margin-bottom: 1rem;
+        }
+        
+        .culture-link-card p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+        
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 0.375rem;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-family: inherit;
+        }
+        
+        .btn-primary {
+            background: var(--earth);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #8B4513;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(160, 82, 45, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--ink);
+            color: var(--ink);
+        }
+        
+        .btn-outline:hover {
+            background: rgba(0, 58, 107, 0.05);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            padding: 3rem 0;
+            border-top: 1px solid var(--border);
+        }
+        
+        .footer-content {
+            text-align: center;
+        }
+        
+        .footer-content p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--earth);
+        }
+        
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-quote {
+                font-size: 1.4rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .season-cards {
+                grid-template-columns: 1fr;
+            }
+            
+            .step-number {
+                left: -1.5rem;
+                width: 2.5rem;
+                height: 2.5rem;
+                font-size: 1.2rem;
+            }
+            
+            .art-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .science-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="preview.html" class="logo">茶叙入海</a>
+            <a href="preview.html" class="back-link">← 返回首页</a>
+        </div>
+    </header>
+
+    <!-- 沉浸式引语区 -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title font-display">茶事风物</h1>
+            <div class="hero-quote">"色澄秋水，味比兰花"</div>
+            <div class="hero-description">
+                这生长于桐城龙眠山云雾之中的灵叶，自明代起便以高雅兰香著称。它不仅是地理标志产品，更是"文都"桐城千年风雅的滋味凝结。让我们一同探索这朵"茶中兰花"的四季之味与冲泡之道。
+            </div>
+        </div>
+    </section>
+
+    <!-- 四季风味对比 -->
+    <section class="section" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">桐城小花的四季风味</h2>
+            <p class="section-subtitle">不同时节，不同风味，每一季都有独特的魅力</p>
+            
+            <div class="season-cards">
+                <!-- 明前茶 -->
+                <div class="season-card">
+                    <span class="season-badge">明前茶</span>
+                    <h3>珍品之选</h3>
+                    <div class="season-time">采摘时间：清明节前</div>
+                    <div class="season-description">
+                        历经一冬养分积累，茶芽最为细嫩。滋味鲜爽度极高，兰花香幽雅清纯，汤色清亮。产量稀少，口感轻盈雅致。
+                    </div>
+                    <div class="season-people">
+                        <strong>适宜人群：</strong>资深茶客，追求极致鲜爽与香气者
+                    </div>
+                </div>
+                
+                <!-- 雨前茶 -->
+                <div class="season-card">
+                    <span class="season-badge">雨前茶</span>
+                    <h3>经典之味</h3>
+                    <div class="season-time">采摘时间：谷雨节气前</div>
+                    <div class="season-description">
+                        气温回升，茶叶内含物质更为均衡。外形舒展如兰，兰花香馥郁持久，滋味鲜醇回甘，韵味足。性价比高，是桐城小花的典型代表。
+                    </div>
+                    <div class="season-people">
+                        <strong>适宜人群：</strong>大多数茶友，日常品饮或初次尝试的首选
+                    </div>
+                </div>
+                
+                <!-- 谷雨茶 -->
+                <div class="season-card">
+                    <span class="season-badge">谷雨茶</span>
+                    <h3>醇和之韵</h3>
+                    <div class="season-time">采摘时间：谷雨期间及之后</div>
+                    <div class="season-description">
+                        叶片稍成熟，内含物质饱满。香气沉稳，滋味更为醇厚、甘甜，耐冲泡。是体验桐城小花醇厚一面的佳选。
+                    </div>
+                    <div class="season-people">
+                        <strong>适宜人群：</strong>喜爱醇厚口感，或用于制作冷泡茶的茶友
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 冲泡指南 -->
+    <section class="section" style="background: var(--secondary);">
+        <div class="container">
+            <h2 class="section-title">如何泡好一杯桐城小花</h2>
+            <p class="section-subtitle">跟随步骤，体验茶中兰花的优雅绽放</p>
+            
+            <div class="brewing-steps">
+                <!-- 步骤1 -->
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-header">
+                        <div class="step-icon">🍵</div>
+                        <h3 class="step-title">择器</h3>
+                    </div>
+                    <div class="step-content">
+                        建议使用透明玻璃杯或白瓷盖碗，便于观赏茶叶在水中舒展如兰的美姿。
+                    </div>
+                </div>
+                
+                <!-- 步骤2 -->
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-header">
+                        <div class="step-icon">🌡️</div>
+                        <h3 class="step-title">水温</h3>
+                    </div>
+                    <div class="step-content">
+                        85°C - 90°C 的热水最为适宜。可将沸水静置1-2分钟再冲泡，避免烫伤嫩叶导致苦涩。
+                    </div>
+                </div>
+                
+                <!-- 步骤3 -->
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-header">
+                        <div class="step-icon">🍃</div>
+                        <h3 class="step-title">投茶</h3>
+                    </div>
+                    <div class="step-content">
+                        根据容器大小，放入适量茶叶（通常玻璃杯约3克，盖碗约5克）。
+                    </div>
+                </div>
+                
+                <!-- 步骤4 -->
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-header">
+                        <div class="step-icon">💧</div>
+                        <h3 class="step-title">冲泡</h3>
+                    </div>
+                    <div class="step-content">
+                        可采用"中投法"：先注入1/3杯热水润茶，轻摇唤醒茶香，再高冲注水至七分满。
+                    </div>
+                </div>
+                
+                <!-- 步骤5 -->
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <div class="step-header">
+                        <div class="step-icon">⏱️</div>
+                        <h3 class="step-title">静候</h3>
+                    </div>
+                    <div class="step-content">
+                        静待1-2分钟，观赏茶叶缓缓沉浮、舒展，汤色渐变为清透的绿亮色后，即可品饮。
+                    </div>
+                </div>
+                
+                <!-- 步骤6 -->
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <div class="step-header">
+                        <div class="step-icon">👄</div>
+                        <h3 class="step-title">品饮</h3>
+                    </div>
+                    <div class="step-content">
+                        一杯茶可冲泡3-4次，每次适当延长浸泡时间，感受每一泡香气与滋味的变化。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 品茶艺术 -->
+    <section class="section" style="background: white;">
+        <div class="container">
+            <h2 class="section-title">品茶的艺术：不止于味道</h2>
+            <p class="section-subtitle">从感官享受到文化体验，让品茶成为一次东方智慧的微体验</p>
+            
+            <div class="art-grid">
+                <div class="art-card">
+                    <div class="art-icon">👁️</div>
+                    <h4>观色</h4>
+                    <div class="art-description">
+                        欣赏汤色"嫩绿明亮"，如春日溪水，清澈透亮，赏心悦目。
+                    </div>
+                </div>
+                
+                <div class="art-card">
+                    <div class="art-icon">👃</div>
+                    <h4>闻香</h4>
+                    <div class="art-description">
+                        细嗅"清鲜持久"的兰花香，这是桐城小花因茶山遍生兰草而得的天赋。
+                    </div>
+                </div>
+                
+                <div class="art-card">
+                    <div class="art-icon">👅</div>
+                    <h4>品味</h4>
+                    <div class="art-description">
+                        小口啜饮，感受"鲜醇"的茶汤，体会入口微苦后迅速化开的绵长回甘。
+                    </div>
+                </div>
+                
+                <div class="art-card special">
+                    <div class="art-icon">💭</div>
+                    <h4>知心</h4>
+                    <div class="art-description">
+                        茶道亦是心境。在宁静的品茶时刻，可以联想到桐城"六尺巷"故事中蕴含的礼让与和谐哲学，让品茶成为一次东方智慧的微体验。
+                    </div>
+                    <a href="impression-tongcheng.html" class="art-link">
+                        了解六尺巷故事 →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 科学特质 -->
+    <section class="section" style="background: var(--secondary);">
+        <div class="container">
+            <h2 class="section-title">背后的科学：为何独特</h2>
+            <p class="section-subtitle">自然馈赠与科学原理，造就桐城小花的独特品质</p>
+            
+            <div class="science-grid">
+                <div class="science-card">
+                    <div class="science-icon">🌱</div>
+                    <h4>富锌土壤</h4>
+                    <div class="science-description">
+                        桐城龙眠山核心产区是天然富锌土壤，这使得茶叶天然含有益健康的锌元素。
+                    </div>
+                    <div class="science-highlight">
+                        <strong>健康益处：</strong>锌是人体必需的微量元素，有助于增强免疫力，促进新陈代谢。
+                    </div>
+                </div>
+                
+                <div class="science-card">
+                    <div class="science-icon">🌺</div>
+                    <h4>兰香之源</h4>
+                    <div class="science-description">
+                        高山云雾弥漫，昼夜温差大，利于香气物质合成；加之茶区野生兰草滋生，清香沁入茶骨，形成独特"兰香甜韵"。
+                    </div>
+                    <div class="science-highlight">
+                        <strong>独特风味：</strong>这种天然的兰花香是桐城小花区别于其他绿茶的核心特征。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 文化关联 -->
+    <section class="section" style="background: white;">
+        <div class="container">
+            <div class="culture-link-card">
+                <h3>想了解更多桐城故事？</h3>
+                <p>探索桐城文脉、六尺巷智慧、龙眠山风光，深入了解桐城小花茶背后的文化底蕴</p>
+                <a href="impression-tongcheng.html" class="btn btn-primary">进入「印象桐城」文化专栏</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>© 2024 茶叙入海. 保留所有权利.</p>
+                <div class="footer-links">
+                    <a href="preview.html">返回首页</a>
+                    <a href="impression-tongcheng.html">印象桐城</a>
+                    <a href="preview.html#products">选购茶叶</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的滚动渐入效果
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // 为卡片添加初始样式和观察
+        document.querySelectorAll('.season-card, .step-card, .art-card, .science-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
+
